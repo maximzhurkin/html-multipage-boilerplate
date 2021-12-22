@@ -12,8 +12,8 @@ npm i
 ```
 
 ## Run
-npm run dev
-npm run build
+- npm run dev
+- npm run build
 
 ## Fonts
 1) Change list fonts in ./layouts/page.pug
