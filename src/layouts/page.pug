@@ -1,0 +1,37 @@
+include ../components/app/config
+
+-
+	const headConfig = {
+		primaryColor: '#424b9f',
+		themeColor: '#ffffff',
+		fonts: [
+			'roboto-400-regular',
+			'roboto-700-bold',
+			'ptsans-700-bold',
+		],
+	}
+
+block data
+	- const heading = ''
+
+doctype html
+html(lang="ru")
+	head
+		title= heading
+		meta(charset="UTF-8")
+		meta(name="description", content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="msapplication-TileColor" content=headConfig.primaryColor)
+		meta(name="msapplication-config" content=path_assets+"/browserconfig.xml")
+		meta(name="theme-color" content=themeColor)
+		meta(http-equiv="Content-Security-Policy", content="upgrade-insecure-requests")
+		link(rel="apple-touch-icon" sizes="180x180" href=path_assets+"/images/favicon/apple-touch-icon.png")
+		link(rel="icon" type="image/png" sizes="32x32" href=path_assets+"/images/favicon/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="16x16" href=path_assets+"/images/favicon/favicon-16x16.png")
+		link(rel="manifest" href=path_assets+"/site.webmanifest")
+		link(rel="mask-icon" href=path_assets+"/images/favicon/safari-pinned-tab.svg" color=headConfig.primaryColor)
+		link(rel="shortcut icon" href=path_assets+"/images/favicon/favicon.ico")
+		each font in headConfig.fonts
+			link(rel="preload" href=path_assets+"/fonts/"+font+".woff2" as="font" crossorigin="anonymous")
+	body
+		block body

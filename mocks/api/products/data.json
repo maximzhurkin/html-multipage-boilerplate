@@ -1,0 +1,13 @@
+{
+   "status": true,
+	 "products": [
+		 {
+			 "id": 1,
+			 "title": "Lorem ipsum dolor sit amet consectetur adipisicing"
+		 },
+		 {
+			 "id": 2,
+			 "title": "Ratione libero a tenetur quasi qui laudantium"
+		 }
+	 ]
+}
