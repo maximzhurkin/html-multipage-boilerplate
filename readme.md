@@ -1,10 +1,19 @@
 # html-multipage-boilerplate
 Webpack 4 boilerplate with pug/stylus/es6 multiple pages
 
+## Install
+1. In project folder run in console
+```
+git clone https://github.com/maximzhurkin/html-multipage-boilerplate.git . && rm -rf .git
+```
+2. Install node modules
+```
+npm i
+```
+
 ## Run
-1) npm i
-2) npm run dev
-3) npm run build
+npm run dev
+npm run build
 
 ## Fonts
 1) Change list fonts in ./layouts/page.pug
