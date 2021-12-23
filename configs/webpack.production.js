@@ -33,7 +33,15 @@ module.exports = merge(config, {
 						}
 					},
 					{ loader: 'postcss-loader' },
-					{ loader: 'stylus-loader' }
+					{
+						loader: 'stylus-loader',
+						options: {
+							import: [
+								path.join(__dirname, '../src/components/app/config.styl'),
+								path.join(__dirname, '../src/components/app/mixins.styl'),
+							],
+						}
+					}
 				]
 			}
 		]
