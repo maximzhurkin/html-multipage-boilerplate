@@ -22,3 +22,7 @@ npm i
 ## Create favicon
 1) Create square image (PNG, JPG, SVG...) 260x260
 2) Make favicon [https://realfavicongenerator.net]
+
+## Styles animation
+1) @import ../styles/animations/popup
+2) animation popup .25s 1
