@@ -17,7 +17,7 @@ npm i
 
 ## Fonts
 1) Change list fonts in ./layouts/page.pug
-2) Change list fonts in ./components/app/app.styl
+2) Change list fonts in ./components/app/config.styl
 
 ## Create favicon
 1) Create square image (PNG, JPG, SVG...) 260x260
