@@ -1,0 +1,13 @@
+{
+	"header": {
+		"title": "Boilerplate"
+	},
+	"hero": {
+		"heading": "Lorem ipsum dolor sit amet consectetur.",
+		"description": "Omnis neque ex nemo! Assumenda modi molestiae asperiores delectus, rem at incidunt quis est illum facilis fuga vero cumque maiores neque dolores temporibus odio sit, magni consequatur nulla magnam saepe dignissimos. Sequi dolorem officia iste ducimus sed provident consequuntur voluptatum ut modi.",
+		"button": "Hello"
+	},
+	"footer": {
+		"copyrights": "© 2022 All rights reserved."
+	}
+}

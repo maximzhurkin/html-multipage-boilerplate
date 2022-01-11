@@ -87,8 +87,16 @@ module.exports = {
 			{
 				test: /\.pug$/,
 				use: [
-					"raw-loader",
-					"pug-html-loader?pretty=true"
+					{
+						loader: 'raw-loader'
+					},
+					{
+						loader: 'pug-html-loader',
+						options: {
+							pretty: true,
+							data: require(paths.src + '/data/data.json')
+						}
+					}
 				]
 			},
 			{

@@ -1,3 +1,11 @@
+include ../../button/button
+
 .hero-info
-	.hero-info__heading Lorem ipsum dolor sit amet consectetur.
-	.hero-info__description Omnis neque ex nemo! Assumenda modi molestiae asperiores delectus, rem at incidunt quis est illum facilis fuga vero cumque maiores neque dolores temporibus odio sit, magni consequatur nulla magnam saepe dignissimos. Sequi dolorem officia iste ducimus sed provident consequuntur voluptatum ut modi.
+	.hero-info__heading= hero.heading
+	.hero-info__description= hero.description
+	.hero-info__button
+		+button({
+			title: hero.button,
+			href: '#',
+			action: 'hello-action'
+		})
