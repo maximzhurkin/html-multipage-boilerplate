@@ -1,0 +1,17 @@
+.button
+	display block
+	height 52px
+	line-height 52px
+	font-size (18 / 16em)
+	font-weight 700
+	color color_blank
+	text-transform uppercase
+	text-align center
+	text-decoration none
+	background-color color_primary
+	border-radius 6px
+	transition background-color .25s ease-in-out, transform .25s ease-in-out
+	.no-touch &:hover
+		background-color lighten(color_primary, 15%)
+	&:active
+		transform translateY(2px) scale(.99)
