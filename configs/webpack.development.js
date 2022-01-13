@@ -15,7 +15,7 @@ module.exports = merge(config, {
 		before: function (app) {
 			mocks.forEach(route => {
 				app.all(route, function (req, res) {
-					setTimeout(() => { // Имитация ответа от сервера 300ms
+					setTimeout(() => { // Simulating server response delay 300ms
 						res.json(require('../mocks' + route + '/data.json'));
 					}, 300);
 				});

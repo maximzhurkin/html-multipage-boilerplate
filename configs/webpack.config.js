@@ -1,18 +1,18 @@
-// Основной конфиг сборки (от него наследуются development и production)
-
 const glob = require('glob');
 const path = require('path');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const paths = {
-	mocks: path.join(__dirname, '../mocks'),
-	src: path.join(__dirname, '../src'),
-	dist: path.join(__dirname, '../dist')
+const config = {
+	assetsHash: false,
+	paths: {
+		mocks: path.join(__dirname, '../mocks'),
+		src: path.join(__dirname, '../src'),
+		dist: path.join(__dirname, '../dist')
+	}
 }
 
 getEntry = function (rule) {
@@ -32,15 +32,15 @@ getEntry = function (rule) {
 
 let pluginsOptions = [];
 
-Object.keys(getEntry(paths.src + '/pages/**/*.pug')).forEach(page => {
+Object.keys(getEntry(config.paths.src + '/pages/**/*.pug')).forEach(page => {
 	pluginsOptions.push(
 		new HtmlWebpackPlugin({
 			title: 'Index',
-			template: paths.src + '/pages/' + page + '/' + page + '.pug',
+			template: config.paths.src + '/pages/' + page + '/' + page + '.pug',
 			filename: './' + page + '.html',
 			chunks: [page],
 			inject: 'body',
-			minify: false
+			minify: false,
 		})
 	);
 });
@@ -51,11 +51,11 @@ module.exports = {
 		assets: false,
 		entrypoints: false
 	},
-	entry: getEntry(paths.src + '/pages/**/*.js'),
+	entry: getEntry(config.paths.src + '/pages/**/*.js'),
 	output: {
-		path: paths.dist,
-		filename: 'assets/js/[id].[hash:8].bundle.js',
-		chunkFilename: 'assets/js/[id].[hash:8].chunk.js',
+		path: config.paths.dist,
+		filename: (config.assetsHash) ? 'assets/js/[id].[hash:8].bundle.js' : 'assets/js/[name].bundle.js',
+		chunkFilename: (config.assetsHash) ? 'assets/js/[id].[hash:8].chunk.js' : 'assets/js/[name].chunk.js',
 		publicPath: './'
 	},
 	optimization: {
@@ -94,10 +94,10 @@ module.exports = {
 						loader: 'pug-html-loader',
 						options: {
 							pretty: true,
-							data: require(paths.src + '/data/data.json')
+							data: require(config.paths.src + '/data/data.json')
 						}
 					}
-				]
+				],
 			},
 			{
 				test: /\.(png|jpg|gif|svg)$/,
@@ -113,19 +113,19 @@ module.exports = {
 		...pluginsOptions,
 		new HtmlWebpackPugPlugin(),
 		new MiniCssExtractPlugin({
-			filename: 'assets/css/[id].[hash:8].bundle.css',
-			chunkFilename: 'assets/css/[id].[hash:8].chunk.css'
+			filename: (config.assetsHash) ? 'assets/css/[id].[hash:8].bundle.css' : 'assets/css/[name].bundle.css',
+			chunkFilename: (config.assetsHash) ? 'assets/css/[id].[hash:8].chunk.css' : 'assets/css/[name].chunk.css'
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: paths.src + '/static/images', to: paths.dist + '/assets/images' },
-				{ from: paths.src + '/static/favicon', to: paths.dist + '/assets/images/favicon' },
-				{ from: paths.src + '/static/fonts', to: paths.dist + '/assets/fonts' },
-				{ from: paths.src + '/static/browserconfig.xml', to: paths.dist + '/assets' },
-				{ from: paths.src + '/static/site.webmanifest', to: paths.dist + '/assets' },
-				{ from: paths.src + '/static/robots.txt', to: paths.dist + '/' },
-				{ from: paths.src + '/static/.htaccess', to: paths.dist + '/' },
-				{ from: paths.mocks + '/api', to: paths.dist + '/api' },
+				{ from: config.paths.src + '/static/images', to: config.paths.dist + '/assets/images' },
+				{ from: config.paths.src + '/static/favicon', to: config.paths.dist + '/assets/images/favicon' },
+				{ from: config.paths.src + '/static/fonts', to: config.paths.dist + '/assets/fonts' },
+				{ from: config.paths.src + '/static/browserconfig.xml', to: config.paths.dist + '/assets' },
+				{ from: config.paths.src + '/static/site.webmanifest', to: config.paths.dist + '/assets' },
+				{ from: config.paths.src + '/static/robots.txt', to: config.paths.dist + '/' },
+				{ from: config.paths.src + '/static/.htaccess', to: config.paths.dist + '/' },
+				{ from: config.paths.mocks + '/api', to: config.paths.dist + '/api' },
 			]
 		}),
 	]

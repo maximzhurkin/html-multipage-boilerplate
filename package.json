@@ -1,13 +1,14 @@
 {
   "name": "html-multipage-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack 4 boilerplate with pug/stylus/es6 multiple pages",
   "author": "Max Zhurkin",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --watch --config ./configs/webpack.development.js",
-    "build": "webpack --config ./configs/webpack.production.js && prettier --write ./dist/*.html"
+    "build": "webpack --config ./configs/webpack.production.js && prettier --write ./dist/*.html",
+		"pack": "zip -r ./dist/html.zip ./dist/assets ./dist/index.html"
   },
   "browserslist": [
     "> 1%",
