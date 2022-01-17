@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --watch --config ./configs/webpack.development.js",
     "build": "webpack --config ./configs/webpack.production.js && prettier --write ./dist/*.html",
-    "pack": "zip -r ./dist/html.zip ./dist/assets ./dist/index.html"
+    "pack": "cd dist/ && zip -r html.zip ./assets ./index.html && unzip -t html.zip"
   },
   "browserslist": [
     "> 1%",
