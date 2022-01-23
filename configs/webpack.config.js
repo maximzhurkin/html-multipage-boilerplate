@@ -121,8 +121,6 @@ module.exports = {
 				{ from: config.paths.src + '/static/images', to: config.paths.dist + '/assets/images' },
 				{ from: config.paths.src + '/static/favicon', to: config.paths.dist + '/assets/images/favicon' },
 				{ from: config.paths.src + '/static/fonts', to: config.paths.dist + '/assets/fonts' },
-				{ from: config.paths.src + '/static/browserconfig.xml', to: config.paths.dist + '/assets' },
-				{ from: config.paths.src + '/static/site.webmanifest', to: config.paths.dist + '/assets' },
 				{ from: config.paths.src + '/static/robots.txt', to: config.paths.dist + '/' },
 				{ from: config.paths.src + '/static/.htaccess', to: config.paths.dist + '/' },
 				{ from: config.paths.mocks + '/api', to: config.paths.dist + '/api' },

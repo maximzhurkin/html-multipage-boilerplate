@@ -20,8 +20,9 @@ npm i
 2) Change list fonts in ./components/app/config.styl
 
 ## Create favicon
-1) Create square image (PNG, JPG, SVG...) 260x260
-2) Make favicon [https://realfavicongenerator.net]
+1) Create icon.svg file 260x260 in src/static/favicon
+2) npm run favicon
+3) npm run favinject
 
 ## Styles animation
 1) @import ../styles/animations/popup

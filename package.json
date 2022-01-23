@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --watch --config ./configs/webpack.development.js",
     "build": "webpack --config ./configs/webpack.production.js && prettier --write ./dist/*.html",
+		"favicon": "node ./node_modules/cli-real-favicon/real-favicon.js generate ./faviconDescription.json ./faviconData.json ./src/static/favicon",
+		"favinject": "node ./node_modules/cli-real-favicon/real-favicon.js inject ./faviconData.json ./src/static/favicon ./src/static/favicon.html",
     "pack": "cd dist/ && zip -r html.zip ./assets ./index.html && unzip -t html.zip"
   },
   "browserslist": [
@@ -22,6 +24,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-es2015": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
+		"cli-real-favicon": "0.0.8",
     "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^4.2.2",
     "css-minimizer-webpack-plugin": "^1.1.3",
