@@ -13,7 +13,11 @@ npm i
 
 ## Run
 - npm run dev
+
+## Build
+- npm run favicon
 - npm run build
+- npm run pack
 
 ## Fonts
 1) Change list fonts in ./layouts/page.pug
@@ -21,8 +25,8 @@ npm i
 
 ## Create favicon
 1) Create icon.svg file 260x260 in src/static/favicon
-2) npm run favicon
-3) npm run favinject
+2) update info in faviconDescription.json (design.safariPinnedTab.themeColor & design.androidChrome.manifest.name)
+3) npm run favicon
 
 ## Styles animation
 1) @import ../styles/animations/popup
