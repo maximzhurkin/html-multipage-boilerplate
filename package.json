@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --progress --watch --config ./configs/webpack.development.js",
     "build": "webpack --config ./configs/webpack.production.js && prettier --write ./dist/*.html",
 		"favicon": "node ./node_modules/cli-real-favicon/real-favicon.js generate ./faviconDescription.json ./faviconData.json ./src/static/favicon && node ./node_modules/cli-real-favicon/real-favicon.js inject ./faviconData.json ./src/static/favicon ./src/static/favicon.html",
-    "pack": "cd dist/ && zip -r html.zip ./assets ./index.html && unzip -t html.zip"
+    "pack": "cd dist/ && zip -r html.zip ./assets ./*.html && unzip -t html.zip"
   },
   "browserslist": [
     "> 1%",
