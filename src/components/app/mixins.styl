@@ -58,6 +58,17 @@ overlay()
 	top 0
 	left 0
 
+hidebox()
+	position absolute
+	z-index -1000
+	overflow  hidden
+	clip rect(0 0 0 0)
+	height 1px
+	width 1px
+	margin -1px
+	padding 0
+	border 0
+
 mq(display)
 	condition = 'screen and (max-width: %s)' % display
 	@media condition
