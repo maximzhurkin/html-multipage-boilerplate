@@ -29,5 +29,5 @@ npm i
 3) npm run favicon
 
 ## Styles animation
-1) @import ../styles/animations/popup
-2) animation popup .25s 1
+1) @import "../../styles/animations/float"
+2) animation float .25s infinite
