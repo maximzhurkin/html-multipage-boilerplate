@@ -31,3 +31,35 @@ npm i
 ## Styles animation
 1) @import "../../styles/animations/float"
 2) animation float .25s infinite
+
+## Add SVG Sprites
+1) npm i svg-sprite-loader@5 --save-dev
+2) create folder src/static/icons
+3) webpack.config.js
+```js
+{
+  test: /\.svg$/,
+  exclude: [path.resolve('node_modules')],
+  loader: 'svg-sprite-loader',
+  options: {
+    extract: true,
+    spriteFilename: './assets/images/icons.svg',
+    runtimeCompat: true
+  }
+},
+{
+  // test: /\.(png|jpg|gif|svg)$/,
+  exclude: [path.resolve('src/static/icons')],
+  // loader: 'file-loader',
+  // options: {
+  //   name: 'assets/images/[name].[ext]'
+  // }
+},
+// ...
+plugins: [
+	// ...pluginsOptions,
+	new SpriteLoaderPlugin({
+		plainSprite: true
+	}),
+]
+```
