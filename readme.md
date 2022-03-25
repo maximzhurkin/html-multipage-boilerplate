@@ -37,6 +37,8 @@ npm i
 2) create folder src/static/icons
 3) webpack.config.js
 ```js
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 {
   test: /\.svg$/,
   exclude: [path.resolve('node_modules')],
@@ -57,9 +59,9 @@ npm i
 },
 // ...
 plugins: [
-	// ...pluginsOptions,
-	new SpriteLoaderPlugin({
-		plainSprite: true
-	}),
+  // ...pluginsOptions,
+  new SpriteLoaderPlugin({
+    plainSprite: true
+  }),
 ]
 ```
